@@ -289,6 +289,7 @@ Makefile: ../../snakegame2.pro D:/Qt/6.7.0/mingw_64/mkspecs/win32-g++/qmake.conf
 		D:/Qt/6.7.0/mingw_64/mkspecs/features/yacc.prf \
 		D:/Qt/6.7.0/mingw_64/mkspecs/features/lex.prf \
 		../../snakegame2.pro \
+		D:/Qt/6.7.0/mingw_64/lib/Qt6OpenGLWidgets.prl \
 		D:/Qt/6.7.0/mingw_64/lib/Qt6OpenGL.prl \
 		D:/Qt/6.7.0/mingw_64/lib/Qt6Widgets.prl \
 		D:/Qt/6.7.0/mingw_64/lib/Qt6Gui.prl \
@@ -515,6 +516,7 @@ D:/Qt/6.7.0/mingw_64/mkspecs/features/exceptions.prf:
 D:/Qt/6.7.0/mingw_64/mkspecs/features/yacc.prf:
 D:/Qt/6.7.0/mingw_64/mkspecs/features/lex.prf:
 ../../snakegame2.pro:
+D:/Qt/6.7.0/mingw_64/lib/Qt6OpenGLWidgets.prl:
 D:/Qt/6.7.0/mingw_64/lib/Qt6OpenGL.prl:
 D:/Qt/6.7.0/mingw_64/lib/Qt6Widgets.prl:
 D:/Qt/6.7.0/mingw_64/lib/Qt6Gui.prl:

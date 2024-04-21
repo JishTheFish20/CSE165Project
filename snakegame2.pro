@@ -13,11 +13,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     glwidget.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    snake.cpp
 
 HEADERS += \
     glwidget.h \
-    mainwindow.h
+    mainwindow.h \
+    snake.h
 
 FORMS += \
     mainwindow.ui

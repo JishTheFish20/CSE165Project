@@ -3,9 +3,7 @@
 
 #include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+class GLWidget;
 
 class MainWindow : public QMainWindow
 {
@@ -16,7 +14,7 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    GLWidget *glWidget;
 };
 
 #endif // MAINWINDOW_H

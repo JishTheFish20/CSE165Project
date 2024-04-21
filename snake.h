@@ -1,22 +1,23 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
+#include <QList>
 #include <QPoint>
+#include <QPainter>
 
 class Snake
 {
 public:
-    Snake();
-    ~Snake();
-
-    void setDirection(int direction);
+    enum Direction { Up, Down, Left, Right };
+    Snake(const QSize &boardSize);
+    void draw(QPainter &painter);
     void move();
-
-    QList<QPoint> getBody();
+    void changeDirection(Direction newDirection);
 
 private:
     QList<QPoint> body;
-    int direction;
+    Direction dir;
+    QSize boardSize;
 };
 
 #endif // SNAKE_H
