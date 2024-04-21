@@ -1,8 +1,9 @@
-QT += core gui opengl
+QT += core gui opengl widgets openglwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+LIBS += -lOpengl32
 
 TARGET = SnakeGame
 TEMPLATE = app
