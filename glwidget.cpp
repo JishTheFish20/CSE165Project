@@ -1,6 +1,7 @@
 #include "glwidget.h"
 #include <QPainter>
 #include <QRandomGenerator>
+#include <QGuiApplication>
 
 GLWidget::GLWidget(QWidget *parent)
     : QOpenGLWidget(parent),
@@ -9,6 +10,12 @@ GLWidget::GLWidget(QWidget *parent)
 {
     connect(timer, &QTimer::timeout, this, &GLWidget::updateGame);
     timer->start(100);
+
+    QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
+    setFixedSize(screenGeometry.size());
+    move(screenGeometry.topLeft());
+
+    setFocusPolicy(Qt::StrongFocus); // Makes sure that keyboard presses are checked
 }
 
 GLWidget::~GLWidget()
@@ -75,10 +82,20 @@ void GLWidget::updateGame()
 
 void GLWidget::initializeSnake()
 {
+    QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
+    int numCellsX = screenGeometry.width() / 15;
+    int numCellsY = screenGeometry.height() / 15;
+
     snake.clear();
-    snake.append(QPoint(5, 5));
-    snake.append(QPoint(4, 5));
-    snake.append(QPoint(3, 5));
+
+    // Randomly spawn the snake within the bounds
+    int headX = QRandomGenerator::global()->bounded(numCellsX - 2) + 1; // Exclude edges
+    int headY = QRandomGenerator::global()->bounded(numCellsY - 2) + 1; // Exclude edges
+    snake.append(QPoint(headX, headY)); // Snake head
+
+    for (int i = 1; i < 3; ++i) {
+        snake.append(QPoint(headX - i, headY)); // Adjacent cells to the left
+    }
 }
 
 void GLWidget::drawSnake()
@@ -121,15 +138,23 @@ void GLWidget::moveSnake()
 
 void GLWidget::generateFood()
 {
-    int x = QRandomGenerator::global()->bounded(20);
-    int y = QRandomGenerator::global()->bounded(20);
+    QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
+    int numCellsX = screenGeometry.width() / 15;
+    int numCellsY = screenGeometry.height() / 15;
+
+    int x = QRandomGenerator::global()->bounded(numCellsX);
+    int y = QRandomGenerator::global()->bounded(numCellsY);
     food = QPoint(x, y);
 }
 
 bool GLWidget::checkCollision()
 {
     QPoint head = snake.first();
-    if (head.x() < 0 || head.x() >= 20 || head.y() < 0 || head.y() >= 20)
+    QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
+    int numCellsX = screenGeometry.width() / 15;
+    int numCellsY = screenGeometry.height() / 15;
+
+    if (head.x() <= 0 || head.x() >= numCellsX - 1 || head.y() <= 0 || head.y() >= numCellsY - 1)
         return true;
     for (int i = 1; i < snake.size(); ++i) {
         if (snake[i] == head)

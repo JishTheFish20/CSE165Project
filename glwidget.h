@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QKeyEvent>
 #include <QRandomGenerator>
+#include <QScreen>
 
 class GLWidget : public QOpenGLWidget
 {
@@ -35,6 +36,10 @@ private:
     QPoint food;
     QList<QPoint> snake;
     QTimer *timer;
+
+    int numCellsX; // Number of cells in the X direction
+    int numCellsY; // Number of cells in the Y direction
+    int cellSize = 10; // Size of each cell in pixels
 };
 
 #endif // GLWIDGET_H
