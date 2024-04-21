@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-ab7a343dfa9e53f63d80.json",
+					"jsonFile" : "directory-.-Debug-68d5a98e558bdfffad01.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -30,7 +30,7 @@
 					[
 						0
 					],
-					"name" : "165",
+					"name" : "snakegame",
 					"targetIndexes" : 
 					[
 						0,
@@ -43,23 +43,23 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "165::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-165-Debug-8641534fabd31980091a.json",
-					"name" : "165",
+					"id" : "snakegame::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-snakegame-Debug-77a27225420bd08bb89b.json",
+					"name" : "snakegame",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "165_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-165_autogen-Debug-7debbbaa2581e3eaa265.json",
-					"name" : "165_autogen",
+					"id" : "snakegame_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-snakegame_autogen-Debug-ba779b0cc19a58394492.json",
+					"name" : "snakegame_autogen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "165_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-165_autogen_timestamp_deps-Debug-58250a03f1380394af21.json",
-					"name" : "165_autogen_timestamp_deps",
+					"id" : "snakegame_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-snakegame_autogen_timestamp_deps-Debug-76e7a91945a0a780d274.json",
+					"name" : "snakegame_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
 			]

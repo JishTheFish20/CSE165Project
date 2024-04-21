@@ -1111,7 +1111,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "165"
+			"value" : "snakegame"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -6066,6 +6066,18 @@
 			"value" : "D:/Qt/6.7.0/mingw_64/lib/cmake/Qt6Gui"
 		},
 		{
+			"name" : "Qt6OpenGL_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt6OpenGL."
+				}
+			],
+			"type" : "PATH",
+			"value" : "D:/Qt/6.7.0/mingw_64/lib/cmake/Qt6OpenGL"
+		},
+		{
 			"name" : "Qt6WidgetsTools_DIR",
 			"properties" : 
 			[
@@ -6212,6 +6224,42 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "C:/Program Files (x86)/165"
+		},
+		{
+			"name" : "snakegame_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug"
+		},
+		{
+			"name" : "snakegame_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "snakegame_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165"
 		}
 	],
 	"kind" : "cache",

@@ -17,12 +17,12 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "165_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"id" : "snakegame_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "165_autogen::@6890427a1f51a3e7e1df",
+	"id" : "snakegame_autogen::@6890427a1f51a3e7e1df",
 	"isGeneratorProvided" : true,
-	"name" : "165_autogen",
+	"name" : "snakegame_autogen",
 	"paths" : 
 	{
 		"build" : ".",
@@ -51,19 +51,19 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/165_autogen",
+			"path" : "build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/snakegame_autogen",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/165_autogen.rule",
+			"path" : "build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/snakegame_autogen.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_x86_windows_msys_pe_64bit-Debug/165_autogen/timestamp.rule",
+			"path" : "build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/timestamp.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

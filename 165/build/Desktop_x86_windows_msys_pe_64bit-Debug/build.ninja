@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: 165
+# Project: snakegame
 # Configurations: Debug
 # =============================================================================
 
@@ -41,55 +41,63 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/daisy/OneDrive/Documents/Test$ Studio$ Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target 165
+# Object build statements for EXECUTABLE target snakegame
 
 
 #############################################
-# Order-only phony target for 165
+# Order-only phony target for snakegame
 
-build cmake_object_order_depends_target_165: phony || 165_autogen 165_autogen/mocs_compilation.cpp 165_autogen/timestamp 165_autogen_timestamp_deps
+build cmake_object_order_depends_target_snakegame: phony || snakegame_autogen snakegame_autogen/mocs_compilation.cpp snakegame_autogen/timestamp snakegame_autogen_timestamp_deps
 
-build CMakeFiles/165.dir/165_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__165_unscanned_Debug C$:/Users/daisy/OneDrive/Documents/Test$ Studio$ Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/165_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_165
+build CMakeFiles/snakegame.dir/snakegame_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__snakegame_unscanned_Debug C$:/Users/daisy/OneDrive/Documents/Test$ Studio$ Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_snakegame
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\165.dir\165_autogen\mocs_compilation.cpp.obj.d
+  DEP_FILE = CMakeFiles\snakegame.dir\snakegame_autogen\mocs_compilation.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/165_autogen/include" -isystem D:/Qt/6.7.0/mingw_64/include/QtCore -isystem D:/Qt/6.7.0/mingw_64/include -isystem D:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem D:/Qt/6.7.0/mingw_64/include/QtGui -isystem D:/Qt/6.7.0/mingw_64/include/QtOpenGL
-  OBJECT_DIR = CMakeFiles\165.dir
-  OBJECT_FILE_DIR = CMakeFiles\165.dir\165_autogen
+  INCLUDES = -I"C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/include" -isystem D:/Qt/6.7.0/mingw_64/include/QtCore -isystem D:/Qt/6.7.0/mingw_64/include -isystem D:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem D:/Qt/6.7.0/mingw_64/include/QtGui -isystem D:/Qt/6.7.0/mingw_64/include/QtOpenGL
+  OBJECT_DIR = CMakeFiles\snakegame.dir
+  OBJECT_FILE_DIR = CMakeFiles\snakegame.dir\snakegame_autogen
 
-build CMakeFiles/165.dir/main.cpp.obj: CXX_COMPILER__165_unscanned_Debug C$:/Users/daisy/OneDrive/Documents/Test$ Studio$ Projects/CSE165Project/165/main.cpp || cmake_object_order_depends_target_165
+build CMakeFiles/snakegame.dir/main.cpp.obj: CXX_COMPILER__snakegame_unscanned_Debug C$:/Users/daisy/OneDrive/Documents/Test$ Studio$ Projects/CSE165Project/165/main.cpp || cmake_object_order_depends_target_snakegame
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\165.dir\main.cpp.obj.d
+  DEP_FILE = CMakeFiles\snakegame.dir\main.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/165_autogen/include" -isystem D:/Qt/6.7.0/mingw_64/include/QtCore -isystem D:/Qt/6.7.0/mingw_64/include -isystem D:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem D:/Qt/6.7.0/mingw_64/include/QtGui -isystem D:/Qt/6.7.0/mingw_64/include/QtOpenGL
-  OBJECT_DIR = CMakeFiles\165.dir
-  OBJECT_FILE_DIR = CMakeFiles\165.dir
+  INCLUDES = -I"C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/include" -isystem D:/Qt/6.7.0/mingw_64/include/QtCore -isystem D:/Qt/6.7.0/mingw_64/include -isystem D:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem D:/Qt/6.7.0/mingw_64/include/QtGui -isystem D:/Qt/6.7.0/mingw_64/include/QtOpenGL
+  OBJECT_DIR = CMakeFiles\snakegame.dir
+  OBJECT_FILE_DIR = CMakeFiles\snakegame.dir
 
-build CMakeFiles/165.dir/mainwindow.cpp.obj: CXX_COMPILER__165_unscanned_Debug C$:/Users/daisy/OneDrive/Documents/Test$ Studio$ Projects/CSE165Project/165/mainwindow.cpp || cmake_object_order_depends_target_165
+build CMakeFiles/snakegame.dir/mainwindow.cpp.obj: CXX_COMPILER__snakegame_unscanned_Debug C$:/Users/daisy/OneDrive/Documents/Test$ Studio$ Projects/CSE165Project/165/mainwindow.cpp || cmake_object_order_depends_target_snakegame
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\165.dir\mainwindow.cpp.obj.d
+  DEP_FILE = CMakeFiles\snakegame.dir\mainwindow.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/165_autogen/include" -isystem D:/Qt/6.7.0/mingw_64/include/QtCore -isystem D:/Qt/6.7.0/mingw_64/include -isystem D:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem D:/Qt/6.7.0/mingw_64/include/QtGui -isystem D:/Qt/6.7.0/mingw_64/include/QtOpenGL
-  OBJECT_DIR = CMakeFiles\165.dir
-  OBJECT_FILE_DIR = CMakeFiles\165.dir
+  INCLUDES = -I"C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/include" -isystem D:/Qt/6.7.0/mingw_64/include/QtCore -isystem D:/Qt/6.7.0/mingw_64/include -isystem D:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem D:/Qt/6.7.0/mingw_64/include/QtGui -isystem D:/Qt/6.7.0/mingw_64/include/QtOpenGL
+  OBJECT_DIR = CMakeFiles\snakegame.dir
+  OBJECT_FILE_DIR = CMakeFiles\snakegame.dir
+
+build CMakeFiles/snakegame.dir/glwidget.cpp.obj: CXX_COMPILER__snakegame_unscanned_Debug C$:/Users/daisy/OneDrive/Documents/Test$ Studio$ Projects/CSE165Project/165/glwidget.cpp || cmake_object_order_depends_target_snakegame
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\snakegame.dir\glwidget.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/include" -isystem D:/Qt/6.7.0/mingw_64/include/QtCore -isystem D:/Qt/6.7.0/mingw_64/include -isystem D:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem D:/Qt/6.7.0/mingw_64/include/QtGui -isystem D:/Qt/6.7.0/mingw_64/include/QtOpenGL
+  OBJECT_DIR = CMakeFiles\snakegame.dir
+  OBJECT_FILE_DIR = CMakeFiles\snakegame.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target 165
+# Link build statements for EXECUTABLE target snakegame
 
 
 #############################################
-# Link the executable 165.exe
+# Link the executable snakegame.exe
 
-build 165.exe: CXX_EXECUTABLE_LINKER__165_Debug CMakeFiles/165.dir/165_autogen/mocs_compilation.cpp.obj CMakeFiles/165.dir/main.cpp.obj CMakeFiles/165.dir/mainwindow.cpp.obj | D$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a D$:/Qt/6.7.0/mingw_64/lib/libQt6OpenGL.a D$:/Qt/6.7.0/mingw_64/lib/libQt6Gui.a D$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a || 165_autogen 165_autogen_timestamp_deps
+build snakegame.exe: CXX_EXECUTABLE_LINKER__snakegame_Debug CMakeFiles/snakegame.dir/snakegame_autogen/mocs_compilation.cpp.obj CMakeFiles/snakegame.dir/main.cpp.obj CMakeFiles/snakegame.dir/mainwindow.cpp.obj CMakeFiles/snakegame.dir/glwidget.cpp.obj | D$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a D$:/Qt/6.7.0/mingw_64/lib/libQt6OpenGL.a D$:/Qt/6.7.0/mingw_64/lib/libQt6Gui.a D$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a || snakegame_autogen snakegame_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = D:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a  D:/Qt/6.7.0/mingw_64/lib/libQt6OpenGL.a  D:/Qt/6.7.0/mingw_64/lib/libQt6Gui.a  D:/Qt/6.7.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\165.dir
+  OBJECT_DIR = CMakeFiles\snakegame.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = 165.exe
-  TARGET_IMPLIB = lib165.dll.a
-  TARGET_PDB = 165.exe.dbg
+  TARGET_FILE = snakegame.exe
+  TARGET_IMPLIB = libsnakegame.dll.a
+  TARGET_PDB = snakegame.exe.dbg
 
 
 #############################################
@@ -159,42 +167,42 @@ build install/strip: phony CMakeFiles/install/strip.util
 
 
 #############################################
-# Utility command for 165_autogen_timestamp_deps
+# Utility command for snakegame_autogen_timestamp_deps
 
-build 165_autogen_timestamp_deps: phony CMakeFiles/165_autogen_timestamp_deps
-
-
-#############################################
-# Utility command for 165_autogen
-
-build 165_autogen: phony CMakeFiles/165_autogen 165_autogen/include/ui_mainwindow.h 165_autogen/timestamp 165_autogen/mocs_compilation.cpp 165_autogen_timestamp_deps
+build snakegame_autogen_timestamp_deps: phony CMakeFiles/snakegame_autogen_timestamp_deps
 
 
 #############################################
-# Custom command for 165_autogen\timestamp
+# Utility command for snakegame_autogen
 
-build 165_autogen/timestamp 165_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}165_autogen/timestamp ${cmake_ninja_workdir}165_autogen/mocs_compilation.cpp: CUSTOM_COMMAND D$:/Qt/6.7.0/mingw_64/./bin/moc.exe D$:/Qt/6.7.0/mingw_64/./bin/uic.exe || 165_autogen_timestamp_deps
-  COMMAND = cmd.exe /C "cd /D "C:\Users\daisy\OneDrive\Documents\Test Studio Projects\CSE165Project\165\build\Desktop_x86_windows_msys_pe_64bit-Debug" && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/165_autogen.dir/AutogenInfo.json" Debug && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/165_autogen/timestamp" && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/165_autogen/deps" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/d/0b04a5b451ab41162829c61e91eb9346d80bbe82dd477119d0dc49b577d58216.d""
-  DESC = Automatic MOC and UIC for target 165
-  depfile = C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/d/0b04a5b451ab41162829c61e91eb9346d80bbe82dd477119d0dc49b577d58216.d
+build snakegame_autogen: phony CMakeFiles/snakegame_autogen snakegame_autogen/include/ui_mainwindow.h snakegame_autogen/timestamp snakegame_autogen/mocs_compilation.cpp snakegame_autogen_timestamp_deps
+
+
+#############################################
+# Custom command for snakegame_autogen\timestamp
+
+build snakegame_autogen/timestamp snakegame_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}snakegame_autogen/timestamp ${cmake_ninja_workdir}snakegame_autogen/mocs_compilation.cpp: CUSTOM_COMMAND D$:/Qt/6.7.0/mingw_64/./bin/moc.exe D$:/Qt/6.7.0/mingw_64/./bin/uic.exe || snakegame_autogen_timestamp_deps
+  COMMAND = cmd.exe /C "cd /D "C:\Users\daisy\OneDrive\Documents\Test Studio Projects\CSE165Project\165\build\Desktop_x86_windows_msys_pe_64bit-Debug" && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/snakegame_autogen.dir/AutogenInfo.json" Debug && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/timestamp" && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/deps" "C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/d/12c6a95108c3e8f76606551eea3d2dfd0b87b163158edb881d75437bdd72227e.d""
+  DESC = Automatic MOC and UIC for target snakegame
+  depfile = C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/CMakeFiles/d/12c6a95108c3e8f76606551eea3d2dfd0b87b163158edb881d75437bdd72227e.d
   restat = 1
 
 
 #############################################
-# Phony custom command for CMakeFiles\165_autogen_timestamp_deps
+# Phony custom command for CMakeFiles\snakegame_autogen_timestamp_deps
 
-build CMakeFiles/165_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/165_autogen_timestamp_deps: phony D$:/Qt/6.7.0/mingw_64/./bin/moc.exe D$:/Qt/6.7.0/mingw_64/./bin/uic.exe D$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a D$:/Qt/6.7.0/mingw_64/lib/libQt6OpenGL.a D$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a
+build CMakeFiles/snakegame_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/snakegame_autogen_timestamp_deps: phony D$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a D$:/Qt/6.7.0/mingw_64/lib/libQt6OpenGL.a D$:/Qt/6.7.0/mingw_64/./bin/uic.exe D$:/Qt/6.7.0/mingw_64/./bin/moc.exe D$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a
 
 
 #############################################
-# Phony custom command for CMakeFiles\165_autogen
+# Phony custom command for CMakeFiles\snakegame_autogen
 
-build CMakeFiles/165_autogen 165_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/165_autogen ${cmake_ninja_workdir}165_autogen/include/ui_mainwindow.h: phony 165_autogen/timestamp || 165_autogen_timestamp_deps
+build CMakeFiles/snakegame_autogen snakegame_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/snakegame_autogen ${cmake_ninja_workdir}snakegame_autogen/include/ui_mainwindow.h: phony snakegame_autogen/timestamp || snakegame_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
 
-build 165: phony 165.exe
+build snakegame: phony snakegame.exe
 
 # =============================================================================
 # Folder targets.
@@ -204,7 +212,7 @@ build 165: phony 165.exe
 #############################################
 # Folder: C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug
 
-build all: phony 165.exe
+build all: phony snakegame.exe
 
 # =============================================================================
 # Built-in targets

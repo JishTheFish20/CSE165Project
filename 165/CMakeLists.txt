@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(165 VERSION 0.1 LANGUAGES CXX)
+project(snakegame VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -9,41 +9,40 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Finding necessary Qt components
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets OpenGL)  # Added OpenGL
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets OpenGL)  # Added OpenGL
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets OpenGL)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets OpenGL)
 
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        glwidget.cpp
+        glwidget.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(165
+    qt_add_executable(snakegame
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
 else()
     if(ANDROID)
-        add_library(165 SHARED
+        add_library(snakegame SHARED
             ${PROJECT_SOURCES}
         )
     else()
-        add_executable(165
+        add_executable(snakegame
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
 
-# Linking with Qt Widgets and OpenGL modules
-target_link_libraries(165 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::OpenGL)
+target_link_libraries(snakegame PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::OpenGL)
 
-# Optional: For iOS and macOS, set bundle identifier manually
 if(${QT_VERSION} VERSION_LESS "6.1.0")
-  set_target_properties(165 PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.165
+  set_target_properties(snakegame PROPERTIES
+    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.snakegame
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
@@ -52,12 +51,12 @@ if(${QT_VERSION} VERSION_LESS "6.1.0")
 endif()
 
 include(GNUInstallDirs)
-install(TARGETS 165
+install(TARGETS snakegame
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(165)
+    qt_finalize_executable(snakegame)
 endif()

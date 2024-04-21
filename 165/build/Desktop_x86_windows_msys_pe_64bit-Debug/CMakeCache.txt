@@ -203,7 +203,7 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/.qtc/package-manager/auto-setup.cmake
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=165
+CMAKE_PROJECT_NAME:STATIC=snakegame
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1
@@ -363,6 +363,15 @@ Vulkan_LIBRARY:FILEPATH=Vulkan_LIBRARY-NOTFOUND
 
 //Path to a program.
 WINDEPLOYQT_EXECUTABLE:FILEPATH=D:/Qt/6.7.0/mingw_64/bin/windeployqt.exe
+
+//Value Computed by CMake
+snakegame_BINARY_DIR:STATIC=C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug
+
+//Value Computed by CMake
+snakegame_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+snakegame_SOURCE_DIR:STATIC=C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165
 
 
 ########################
