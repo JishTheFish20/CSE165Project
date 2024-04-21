@@ -35,7 +35,6 @@ void GLWidget::initializeGL()
 
     initializeSnake();
     generateFood();
-    foodGenerated = false; // Set foodGenerated flag to false
 }
 
 void GLWidget::paintGL()
@@ -163,12 +162,9 @@ void GLWidget::moveSnake()
 
 void GLWidget::generateFood()
 {
-    if (!foodGenerated) {
-        int x = QRandomGenerator::global()->bounded(width() / cellSize);
-        int y = QRandomGenerator::global()->bounded(height() / cellSize);
-        food = QPoint(x, y);
-        foodGenerated = true; // Set foodGenerated flag to true
-    }
+    int x = QRandomGenerator::global()->bounded(width() / cellSize);
+    int y = QRandomGenerator::global()->bounded(height() / cellSize);
+    food = QPoint(x, y);
 }
 
 bool GLWidget::checkCollision()

@@ -32,7 +32,6 @@ private:
     int cellSize;
     bool snakeMoving;
     bool invulnerable;
-    bool foodGenerated; // Flag to track if food has been generated
 
     void updateGame();
     void initializeSnake();
