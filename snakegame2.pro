@@ -1,24 +1,22 @@
-TEMPLATE = app
-TARGET = snakegame2
-CONFIG += c++17
-CONFIG += qt
+QT += core gui opengl
 
-QT += core gui widgets opengl
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+CONFIG += c++11
+
+TARGET = SnakeGame
+TEMPLATE = app
+
+DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
-    glwidget.cpp
+    glwidget.cpp \
+    mainwindow.cpp
 
 HEADERS += \
-    mainwindow.h \
-    glwidget.h
+    glwidget.h \
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui
-
-RESOURCES += \
-    resources.qrc
-
-# Define any additional libraries needed
-LIBS += -lGL
