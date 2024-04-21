@@ -1,7 +1,0 @@
-# ninja log v5
-3	544	7354264329653683	build.ninja	76e7dd9c69b79faa
-20	176	7354264331915739	snakegame_autogen/timestamp	5d715fc4ba2135e5
-20	176	7354264331915739	snakegame_autogen/mocs_compilation.cpp	5d715fc4ba2135e5
-20	176	7354264331915739	C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/timestamp	5d715fc4ba2135e5
-20	176	7354264331915739	C:/Users/daisy/OneDrive/Documents/Test Studio Projects/CSE165Project/165/build/Desktop_x86_windows_msys_pe_64bit-Debug/snakegame_autogen/mocs_compilation.cpp	5d715fc4ba2135e5
-177	271	7354264333186902	CMakeFiles/snakegame.dir/snakegame_autogen/mocs_compilation.cpp.obj	8a221e80f6aaa16
