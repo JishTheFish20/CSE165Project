@@ -9,14 +9,30 @@ void Snake::draw(QPainter &painter) {
 }
 
 void Snake::move() {
-    QPoint head = body.front();
+    // Get the current position of the head
+    QPoint newHead = body.front();
+
+    // Calculate the new position of the head based on the current direction
     switch (dir) {
-    case Up:    head.ry() -= 1; break;
-    case Down:  head.ry() += 1; break;
-    case Left:  head.rx() -= 1; break;
-    case Right: head.rx() += 1; break;
+    case Up:
+        newHead.ry() -= 1;
+        break;
+    case Down:
+        newHead.ry() += 1;
+        break;
+    case Left:
+        newHead.rx() -= 1;
+        break;
+    case Right:
+        newHead.rx() += 1;
+        break;
     }
-    // Update the rest of the snake's body accordingly
+
+    // Add the new head to the front of the body
+    body.prepend(newHead);
+
+    // Remove the last segment of the body to maintain the snake's length
+    body.removeLast();
 }
 
 void Snake::changeDirection(Direction newDirection) {

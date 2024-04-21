@@ -1,18 +1,23 @@
 #include "glwidget.h"
 #include <QPainter>
-#include <QRandomGenerator>
-#include <QGuiApplication>
 
 GLWidget::GLWidget(QWidget *parent)
     : QOpenGLWidget(parent),
     snakeDirection(Right),
-    timer(new QTimer(this))
+    timer(new QTimer(this)),
+    cellSize(20), // Set a larger size for each cell
+    invulnerable(true) // Initialize invulnerability state to true
 {
     connect(timer, &QTimer::timeout, this, &GLWidget::updateGame);
     timer->start(100);
 
+    // Get the size of the primary screen
     QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
+
+    // Set the window size to match the screen size
     setFixedSize(screenGeometry.size());
+
+    // Optionally, you can move the window to the top-left corner of the screen
     move(screenGeometry.topLeft());
 
     setFocusPolicy(Qt::StrongFocus); // Makes sure that keyboard presses are checked
@@ -30,6 +35,7 @@ void GLWidget::initializeGL()
 
     initializeSnake();
     generateFood();
+    foodGenerated = false; // Set foodGenerated flag to false
 }
 
 void GLWidget::paintGL()
@@ -50,20 +56,31 @@ void GLWidget::keyPressEvent(QKeyEvent *event)
 {
     switch (event->key()) {
     case Qt::Key_Up:
-        if (snakeDirection != Down)
-            snakeDirection = Up;
-        break;
     case Qt::Key_Down:
-        if (snakeDirection != Up)
-            snakeDirection = Down;
-        break;
     case Qt::Key_Left:
-        if (snakeDirection != Right)
-            snakeDirection = Left;
-        break;
     case Qt::Key_Right:
-        if (snakeDirection != Left)
-            snakeDirection = Right;
+        snakeMoving = true; // Snake starts moving when a direction key is pressed
+        invulnerable = false; // Snake becomes vulnerable when a direction key is pressed
+        switch (event->key()) {
+        case Qt::Key_Up:
+            if (snakeDirection != Down)
+                snakeDirection = Up;
+            break;
+        case Qt::Key_Down:
+            if (snakeDirection != Up)
+                snakeDirection = Down;
+            break;
+        case Qt::Key_Left:
+            if (snakeDirection != Right)
+                snakeDirection = Left;
+            break;
+        case Qt::Key_Right:
+            if (snakeDirection != Left)
+                snakeDirection = Right;
+            break;
+        default:
+            break;
+        }
         break;
     default:
         break;
@@ -73,29 +90,37 @@ void GLWidget::keyPressEvent(QKeyEvent *event)
 void GLWidget::updateGame()
 {
     moveSnake();
-    if (checkCollision()) {
+    if (checkCollision() && !invulnerable) { // Check collision only if not invulnerable
         initializeSnake();
         generateFood();
+        invulnerable = true; // Snake becomes invulnerable after respawn
     }
     update();
 }
 
 void GLWidget::initializeSnake()
 {
+    // Get the size of the primary screen
     QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
-    int numCellsX = screenGeometry.width() / 15;
-    int numCellsY = screenGeometry.height() / 15;
 
+    // Calculate the number of cells horizontally and vertically based on screen size
+    int numCellsX = screenGeometry.width() / cellSize;
+    int numCellsY = screenGeometry.height() / cellSize;
+
+    // Calculate the starting position of the snake near the middle of the screen
+    int startX = numCellsX / 2;
+    int startY = numCellsY / 2;
+
+    // Initialize the snake with a default size of 3 cells
     snake.clear();
 
-    // Randomly spawn the snake within the bounds
-    int headX = QRandomGenerator::global()->bounded(numCellsX - 2) + 1; // Exclude edges
-    int headY = QRandomGenerator::global()->bounded(numCellsY - 2) + 1; // Exclude edges
-    snake.append(QPoint(headX, headY)); // Snake head
-
-    for (int i = 1; i < 3; ++i) {
-        snake.append(QPoint(headX - i, headY)); // Adjacent cells to the left
+    // Spawn the snake head and the rest of the body segments with rightwards momentum
+    for (int i = 0; i < 3; ++i) {
+        snake.append(QPoint(startX + i, startY)); // Snake body segments with rightwards momentum
     }
+
+    // Set the snake direction to Right
+    snakeDirection = Right;
 }
 
 void GLWidget::drawSnake()
@@ -105,11 +130,11 @@ void GLWidget::drawSnake()
     painter.setBrush(Qt::white);
 
     for (const auto &segment : snake) {
-        painter.drawRect(segment.x() * 10, segment.y() * 10, 10, 10);
+        painter.drawRect(segment.x() * cellSize, segment.y() * cellSize, cellSize, cellSize);
     }
 
     painter.setBrush(Qt::red);
-    painter.drawRect(food.x() * 10, food.y() * 10, 10, 10);
+    painter.drawRect(food.x() * cellSize, food.y() * cellSize, cellSize, cellSize);
 }
 
 void GLWidget::moveSnake()
@@ -138,24 +163,24 @@ void GLWidget::moveSnake()
 
 void GLWidget::generateFood()
 {
-    QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
-    int numCellsX = screenGeometry.width() / 15;
-    int numCellsY = screenGeometry.height() / 15;
-
-    int x = QRandomGenerator::global()->bounded(numCellsX);
-    int y = QRandomGenerator::global()->bounded(numCellsY);
-    food = QPoint(x, y);
+    if (!foodGenerated) {
+        int x = QRandomGenerator::global()->bounded(width() / cellSize);
+        int y = QRandomGenerator::global()->bounded(height() / cellSize);
+        food = QPoint(x, y);
+        foodGenerated = true; // Set foodGenerated flag to true
+    }
 }
 
 bool GLWidget::checkCollision()
 {
-    QPoint head = snake.first();
-    QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
-    int numCellsX = screenGeometry.width() / 15;
-    int numCellsY = screenGeometry.height() / 15;
+    if (invulnerable) // Skip collision detection if invulnerable
+        return false;
 
-    if (head.x() <= 0 || head.x() >= numCellsX - 1 || head.y() <= 0 || head.y() >= numCellsY - 1)
+    QPoint head = snake.first();
+    // Check if the head collides with the borders of the playfield
+    if (head.x() < 0 || head.x() >= (width() / cellSize) || head.y() < 0 || head.y() >= (height() / cellSize))
         return true;
+    // Check if the head collides with the snake's body
     for (int i = 1; i < snake.size(); ++i) {
         if (snake[i] == head)
             return true;

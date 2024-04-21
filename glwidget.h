@@ -1,19 +1,20 @@
 #ifndef GLWIDGET_H
 #define GLWIDGET_H
 
-#include <QtOpenGLWidgets/QOpenGLWidget>
+#include <QOpenGLWidget>
 #include <QTimer>
 #include <QKeyEvent>
+#include <QPainter>
 #include <QRandomGenerator>
-#include <QScreen>
+#include <QGuiApplication>
 
 class GLWidget : public QOpenGLWidget
 {
     Q_OBJECT
 
 public:
-    GLWidget(QWidget *parent = nullptr);
-    ~GLWidget();
+    explicit GLWidget(QWidget *parent = nullptr);
+    ~GLWidget() override;
 
 protected:
     void initializeGL() override;
@@ -21,25 +22,24 @@ protected:
     void resizeGL(int width, int height) override;
     void keyPressEvent(QKeyEvent *event) override;
 
-private slots:
-    void updateGame();
-
 private:
+    enum Direction { Up, Down, Left, Right };
+
+    QTimer *timer;
+    QList<QPoint> snake;
+    QPoint food;
+    Direction snakeDirection;
+    int cellSize;
+    bool snakeMoving;
+    bool invulnerable;
+    bool foodGenerated; // Flag to track if food has been generated
+
+    void updateGame();
     void initializeSnake();
     void drawSnake();
     void moveSnake();
     void generateFood();
     bool checkCollision();
-
-    enum Direction { Up, Down, Left, Right };
-    Direction snakeDirection;
-    QPoint food;
-    QList<QPoint> snake;
-    QTimer *timer;
-
-    int numCellsX; // Number of cells in the X direction
-    int numCellsY; // Number of cells in the Y direction
-    int cellSize = 10; // Size of each cell in pixels
 };
 
 #endif // GLWIDGET_H
