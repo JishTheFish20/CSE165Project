@@ -38,3 +38,7 @@ void Snake::move() {
 void Snake::changeDirection(Direction newDirection) {
     dir = newDirection;
 }
+
+int Snake::getSnakeSpeed(){
+    return snakeSpeed;
+}

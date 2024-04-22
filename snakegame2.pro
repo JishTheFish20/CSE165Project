@@ -11,12 +11,15 @@ TEMPLATE = app
 DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
+    food.cpp \
     main.cpp \
     glwidget.cpp \
     mainwindow.cpp \
     snake.cpp
 
 HEADERS += \
+    SpeedFood.h \
+    food.h \
     glwidget.h \
     mainwindow.h \
     snake.h

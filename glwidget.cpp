@@ -1,5 +1,7 @@
 #include "glwidget.h"
 #include <QPainter>
+#include <QGuiApplication>
+
 
 GLWidget::GLWidget(QWidget *parent)
     : QOpenGLWidget(parent),
@@ -9,7 +11,7 @@ GLWidget::GLWidget(QWidget *parent)
     invulnerable(true) // Initialize invulnerability state to true
 {
     connect(timer, &QTimer::timeout, this, &GLWidget::updateGame);
-    timer->start(100);
+    timer->start(150);
 
     // Get the size of the primary screen
     QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
@@ -21,11 +23,14 @@ GLWidget::GLWidget(QWidget *parent)
     move(screenGeometry.topLeft());
 
     setFocusPolicy(Qt::StrongFocus); // Makes sure that keyboard presses are checked
+
+    food = new Food(this);
 }
 
 GLWidget::~GLWidget()
 {
     delete timer;
+    delete food;
 }
 
 void GLWidget::initializeGL()
@@ -48,7 +53,7 @@ void GLWidget::paintGL()
 
 void GLWidget::resizeGL(int width, int height)
 {
-    glViewport(0, 0, width, height);
+    glViewport(0, 0, width/2, height/2);
 }
 
 void GLWidget::keyPressEvent(QKeyEvent *event)
@@ -92,6 +97,7 @@ void GLWidget::updateGame()
     if (checkCollision() && !invulnerable) { // Check collision only if not invulnerable
         initializeSnake();
         generateFood();
+        timer->setInterval(150);
         invulnerable = true; // Snake becomes invulnerable after respawn
     }
     update();
@@ -132,8 +138,16 @@ void GLWidget::drawSnake()
         painter.drawRect(segment.x() * cellSize, segment.y() * cellSize, cellSize, cellSize);
     }
 
-    painter.setBrush(Qt::red);
-    painter.drawRect(food.x() * cellSize, food.y() * cellSize, cellSize, cellSize);
+    switch (food->type()) {
+    case Food::Normal:
+        painter.setBrush(Qt::red);
+        break;
+    case Food::SpeedBoost:
+        painter.setBrush(Qt::yellow);
+        break;
+    }
+
+    painter.drawRect(food->position().x() * cellSize, food->position().y() * cellSize, cellSize, cellSize);
 }
 
 void GLWidget::moveSnake()
@@ -154,17 +168,38 @@ void GLWidget::moveSnake()
         break;
     }
     snake.prepend(head);
-    if (head != food)
+    if (head != food->position())
         snake.removeLast();
-    else
+    else{
         generateFood();
+        switch (food->type()) {
+            case Food::Normal:
+
+                break;
+            case Food::SpeedBoost:
+                if(timer->interval() > 50){
+                 timer->setInterval(timer->interval()-50);
+                }
+                break;
+        }
+    }
 }
 
 void GLWidget::generateFood()
 {
     int x = QRandomGenerator::global()->bounded(width() / cellSize);
     int y = QRandomGenerator::global()->bounded(height() / cellSize);
-    food = QPoint(x, y);
+    food->setPosition(QPoint(x, y));
+
+    int randomType = QRandomGenerator::global()->bounded(2); // Assuming you have 3 types of food
+    switch (randomType) {
+    case 0:
+        food->setType(Food::Normal);
+        break;
+    case 1:
+        food->setType(Food::SpeedBoost);
+        break;
+    }
 }
 
 bool GLWidget::checkCollision()

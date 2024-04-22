@@ -7,6 +7,7 @@
 #include <QPainter>
 #include <QRandomGenerator>
 #include <QGuiApplication>
+#include "food.h"
 
 class GLWidget : public QOpenGLWidget
 {
@@ -27,8 +28,8 @@ private:
 
     QTimer *timer;
     QList<QPoint> snake;
-    QPoint food;
     Direction snakeDirection;
+    Food *food;
     int cellSize;
     bool snakeMoving;
     bool invulnerable;
