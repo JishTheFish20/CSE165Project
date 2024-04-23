@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLabel>
 
 class GLWidget;
 
@@ -12,6 +13,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    int width, height;
+    QLabel *speedLabel; // Declare a pointer to QLabel
 
 private:
     GLWidget *glWidget;

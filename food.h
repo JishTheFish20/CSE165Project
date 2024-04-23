@@ -24,6 +24,7 @@ public:
     virtual QPoint position() const { return m_position; } // Made virtual for polymorphism
     virtual void setPosition(const QPoint &position) { m_position = position; } // Made virtual for polymorphism
 
+
     virtual void applyEffect(Snake &snake) const {}
     // Virtual destructor for proper cleanup in derived classes
     virtual ~Food() {}

@@ -10,21 +10,29 @@ GLWidget::GLWidget(QWidget *parent)
     cellSize(20), // Set a larger size for each cell
     invulnerable(true) // Initialize invulnerability state to true
 {
+
     connect(timer, &QTimer::timeout, this, &GLWidget::updateGame);
-    timer->start(150);
+    timer->start(getTime());
 
     // Get the size of the primary screen
     QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
 
     // Set the window size to match the screen size
-    setFixedSize(screenGeometry.size());
+    setFixedSize(screenGeometry.size().width()/1.5, screenGeometry.size().height()/1.5);
 
     // Optionally, you can move the window to the top-left corner of the screen
     move(screenGeometry.topLeft());
 
+    speedLabel = new QLabel("Speed: N/A", this);
+    speedLabel->setStyleSheet("color: white; font-size: 20pt;"); // Set text color to white and font size to 20 points
+    speedLabel->move(100, 0); // Adjust the position of the label as needed
+    speedLabel->raise();
+    speedLabel->show(); // Ensure the label is visible
+
     setFocusPolicy(Qt::StrongFocus); // Makes sure that keyboard presses are checked
 
     food = new Food(this);
+
 }
 
 GLWidget::~GLWidget()
@@ -53,7 +61,7 @@ void GLWidget::paintGL()
 
 void GLWidget::resizeGL(int width, int height)
 {
-    glViewport(0, 0, width/2, height/2);
+    glViewport(0, 0, width/1.5, height/1.5);
 }
 
 void GLWidget::keyPressEvent(QKeyEvent *event)
@@ -93,11 +101,12 @@ void GLWidget::keyPressEvent(QKeyEvent *event)
 
 void GLWidget::updateGame()
 {
+    speedLabel->setText(QString("Speed: %1").arg(150 - timer->interval()));
     moveSnake();
     if (checkCollision() && !invulnerable) { // Check collision only if not invulnerable
         initializeSnake();
         generateFood();
-        timer->setInterval(150);
+        timer->setInterval(getTime());
         invulnerable = true; // Snake becomes invulnerable after respawn
     }
     update();
@@ -109,8 +118,8 @@ void GLWidget::initializeSnake()
     QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
 
     // Calculate the number of cells horizontally and vertically based on screen size
-    int numCellsX = screenGeometry.width() / cellSize;
-    int numCellsY = screenGeometry.height() / cellSize;
+    int numCellsX = screenGeometry.width() / 2 / cellSize;
+    int numCellsY = screenGeometry.height() / 2 / cellSize;
 
     // Calculate the starting position of the snake near the middle of the screen
     int startX = numCellsX / 2;
@@ -171,17 +180,17 @@ void GLWidget::moveSnake()
     if (head != food->position())
         snake.removeLast();
     else{
-        generateFood();
         switch (food->type()) {
-            case Food::Normal:
+        case Food::Normal:
 
-                break;
-            case Food::SpeedBoost:
-                if(timer->interval() > 50){
-                 timer->setInterval(timer->interval()-50);
-                }
-                break;
+            break;
+        case Food::SpeedBoost:
+            if(timer->interval() > 50){
+                timer->setInterval(timer->interval()-20);
+            }
+            break;
         }
+        generateFood();
     }
 }
 

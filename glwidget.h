@@ -7,6 +7,7 @@
 #include <QPainter>
 #include <QRandomGenerator>
 #include <QGuiApplication>
+#include <QLabel>
 #include "food.h"
 
 class GLWidget : public QOpenGLWidget
@@ -22,14 +23,17 @@ protected:
     void paintGL() override;
     void resizeGL(int width, int height) override;
     void keyPressEvent(QKeyEvent *event) override;
+    int getTime(){return time;}
 
 private:
     enum Direction { Up, Down, Left, Right };
 
     QTimer *timer;
     QList<QPoint> snake;
+    QLabel *speedLabel; // Declare a pointer to QLabel
     Direction snakeDirection;
     Food *food;
+    int time = 150;
     int cellSize;
     bool snakeMoving;
     bool invulnerable;
