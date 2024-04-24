@@ -13,7 +13,9 @@ public:
     enum Type {
         Normal,
         SpeedBoost, // New type for speed boost food
-        ColorChange // New type for color change food
+        ColorChange, // New type for color change food
+        SnailEffect,
+        TeleportFruit,
     };
 
     explicit Food(QObject *parent = nullptr);

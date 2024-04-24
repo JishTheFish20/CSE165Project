@@ -5,6 +5,7 @@
 #include <QLabel>
 
 class GLWidget;
+class StartupMenu;
 
 class MainWindow : public QMainWindow
 {
@@ -18,6 +19,10 @@ public:
 
 private:
     GLWidget *glWidget;
+    StartupMenu *startupMenu;
+
+private slots:
+    void startGame();
 };
 
 #endif // MAINWINDOW_H

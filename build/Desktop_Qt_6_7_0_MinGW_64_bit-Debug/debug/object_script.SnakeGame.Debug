@@ -1,0 +1,10 @@
+debug/food.o
+debug/main.o
+debug/glwidget.o
+debug/mainwindow.o
+debug/snake.o
+debug/startupmenu.o
+debug/moc_food.o
+debug/moc_glwidget.o
+debug/moc_mainwindow.o
+debug/moc_startupmenu.o

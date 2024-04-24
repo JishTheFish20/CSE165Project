@@ -10,19 +10,28 @@ TEMPLATE = app
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
+ASSESTS += \
+    SnakeStartScreen.png
+
+
 SOURCES += \
     food.cpp \
     main.cpp \
     glwidget.cpp \
     mainwindow.cpp \
-    snake.cpp
+    snake.cpp \
+    startupmenu.cpp
 
 HEADERS += \
     SpeedFood.h \
     food.h \
     glwidget.h \
     mainwindow.h \
-    snake.h
+    snake.h \
+    startupmenu.h
 
 FORMS += \
     mainwindow.ui
+
+DISTFILES += \
+    Assests/SnakeStartScreen.png

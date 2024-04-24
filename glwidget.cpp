@@ -154,6 +154,12 @@ void GLWidget::drawSnake()
     case Food::SpeedBoost:
         painter.setBrush(Qt::yellow);
         break;
+    case Food::SnailEffect:
+        painter.setBrush(Qt::blue);
+        break;
+    case Food::TeleportFruit:
+        painter.setBrush(Qt::green);
+        break;
     }
 
     painter.drawRect(food->position().x() * cellSize, food->position().y() * cellSize, cellSize, cellSize);
@@ -189,6 +195,12 @@ void GLWidget::moveSnake()
                 timer->setInterval(timer->interval()-20);
             }
             break;
+        case Food::SnailEffect:
+            timer->setInterval(timer->interval()+20);
+            break;
+        case Food::TeleportFruit:
+            teleportSnake();
+            break;
         }
         generateFood();
     }
@@ -200,7 +212,7 @@ void GLWidget::generateFood()
     int y = QRandomGenerator::global()->bounded(height() / cellSize);
     food->setPosition(QPoint(x, y));
 
-    int randomType = QRandomGenerator::global()->bounded(2); // Assuming you have 3 types of food
+    int randomType = QRandomGenerator::global()->bounded(4); // Assuming you have 3 types of food
     switch (randomType) {
     case 0:
         food->setType(Food::Normal);
@@ -208,7 +220,23 @@ void GLWidget::generateFood()
     case 1:
         food->setType(Food::SpeedBoost);
         break;
+    case 2:
+        food->setType(Food::SnailEffect);
+        break;
+    case 3:
+        food->setType(Food::TeleportFruit);
+        break;
     }
+}
+
+void GLWidget::teleportSnake()
+{
+    int x = QRandomGenerator::global()->bounded(width() / cellSize);
+    int y = QRandomGenerator::global()->bounded(height() / cellSize);
+    QPoint newHeadPosition(x, y);
+
+    // Clear the old snake head and update it with the new position
+    snake[0] = newHeadPosition;
 }
 
 bool GLWidget::checkCollision()
@@ -221,8 +249,8 @@ bool GLWidget::checkCollision()
     if (head.x() < 0 || head.x() >= (width() / cellSize) || head.y() < 0 || head.y() >= (height() / cellSize))
         return true;
     // Check if the head collides with the snake's body
-    for (int i = 1; i < snake.size(); ++i) {
-        if (snake[i] == head)
+    for (int i = 0; i < snake.size(); ++i) {
+        if (i != 0 && snake[i] == head) // Skip the comparison with the head itself
             return true;
     }
     return false;

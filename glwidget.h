@@ -8,6 +8,7 @@
 #include <QRandomGenerator>
 #include <QGuiApplication>
 #include <QLabel>
+#include <QDateTime> // Include QDateTime for time calculations
 #include "food.h"
 
 class GLWidget : public QOpenGLWidget
@@ -37,12 +38,17 @@ private:
     int cellSize;
     bool snakeMoving;
     bool invulnerable;
+    // Add a member variable to store the time of the last movement
+    QDateTime lastMoveTime;
+    // Add a constant for the cooldown duration (in milliseconds)
+    const int movementCooldown = 200; // Adjust this value as needed
 
     void updateGame();
     void initializeSnake();
     void drawSnake();
     void moveSnake();
     void generateFood();
+    void teleportSnake();
     bool checkCollision();
 };
 
