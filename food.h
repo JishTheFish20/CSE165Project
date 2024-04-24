@@ -10,10 +10,12 @@ class Food : public QObject
 {
     Q_OBJECT
 public:
+
+    QString name;
+
     enum Type {
         Normal,
         SpeedBoost, // New type for speed boost food
-        ColorChange, // New type for color change food
         SnailEffect,
         TeleportFruit,
     };
@@ -27,7 +29,6 @@ public:
     virtual void setPosition(const QPoint &position) { m_position = position; } // Made virtual for polymorphism
 
 
-    virtual void applyEffect(Snake &snake) const {}
     // Virtual destructor for proper cleanup in derived classes
     virtual ~Food() {}
 

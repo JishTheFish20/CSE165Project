@@ -33,5 +33,7 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
-DISTFILES += \
-    Assests/SnakeStartScreen.png
+DISTFILES +=
+
+RESOURCES += \
+    Assests.qrc

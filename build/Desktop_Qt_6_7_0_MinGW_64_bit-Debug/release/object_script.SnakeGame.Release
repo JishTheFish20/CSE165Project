@@ -4,6 +4,7 @@ release/glwidget.o
 release/mainwindow.o
 release/snake.o
 release/startupmenu.o
+release/qrc_Assests.o
 release/moc_food.o
 release/moc_glwidget.o
 release/moc_mainwindow.o

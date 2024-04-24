@@ -32,6 +32,8 @@ private:
     QTimer *timer;
     QList<QPoint> snake;
     QLabel *speedLabel; // Declare a pointer to QLabel
+    QLabel *scoreCounter;
+    QLabel *currentFood;
     Direction snakeDirection;
     Food *food;
     int time = 150;

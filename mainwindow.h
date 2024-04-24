@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QLabel>
+#include <QApplication>
+
 
 class GLWidget;
 class StartupMenu;
@@ -16,6 +18,7 @@ public:
     ~MainWindow();
     int width, height;
     QLabel *speedLabel; // Declare a pointer to QLabel
+    QLabel *scoreCounter;
 
 private:
     GLWidget *glWidget;

@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::startGame()
 {
     glWidget = new GLWidget(this);
+
     setCentralWidget(glWidget);
     setWindowTitle("Snake Game");
     glWidget->show();

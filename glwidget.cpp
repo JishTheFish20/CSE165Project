@@ -5,8 +5,8 @@
 
 GLWidget::GLWidget(QWidget *parent)
     : QOpenGLWidget(parent),
-    snakeDirection(Right),
     timer(new QTimer(this)),
+    snakeDirection(Right),
     cellSize(20), // Set a larger size for each cell
     invulnerable(true) // Initialize invulnerability state to true
 {
@@ -20,14 +20,28 @@ GLWidget::GLWidget(QWidget *parent)
     // Set the window size to match the screen size
     setFixedSize(screenGeometry.size().width()/1.5, screenGeometry.size().height()/1.5);
 
+
+
     // Optionally, you can move the window to the top-left corner of the screen
-    move(screenGeometry.topLeft());
+    //move(screenGeometry.topLeft());
 
     speedLabel = new QLabel("Speed: N/A", this);
-    speedLabel->setStyleSheet("color: white; font-size: 20pt;"); // Set text color to white and font size to 20 points
-    speedLabel->move(100, 0); // Adjust the position of the label as needed
+    speedLabel->setStyleSheet("color: white; font-size: 15pt;"); // Set text color to white and font size to 20 points
+    speedLabel->move(200, 0); // Adjust the position of the label as needed
     speedLabel->raise();
     speedLabel->show(); // Ensure the label is visible
+
+    scoreCounter = new QLabel("Score: N/A", this);
+    scoreCounter->setStyleSheet("color: white; font-size: 15pt;"); // Set text color to white and font size to 20 points
+    scoreCounter->move(50, 0); // Adjust the position of the label as needed
+    scoreCounter->raise();
+    scoreCounter->show(); // Ensure the label is visible
+
+    currentFood = new QLabel("Fruit: N/A", this);
+    currentFood->setStyleSheet("color: white; font-size: 15pt;"); // Set text color to white and font size to 20 points
+    currentFood->move(300, 0); // Adjust the position of the label as needed
+    currentFood->raise();
+    currentFood->show(); // Ensure the label is visible
 
     setFocusPolicy(Qt::StrongFocus); // Makes sure that keyboard presses are checked
 
@@ -102,6 +116,7 @@ void GLWidget::keyPressEvent(QKeyEvent *event)
 void GLWidget::updateGame()
 {
     speedLabel->setText(QString("Speed: %1").arg(150 - timer->interval()));
+    scoreCounter->setText(QString("Score: %1").arg((snake.size() - 3) * 10));
     moveSnake();
     if (checkCollision() && !invulnerable) { // Check collision only if not invulnerable
         initializeSnake();
@@ -216,15 +231,19 @@ void GLWidget::generateFood()
     switch (randomType) {
     case 0:
         food->setType(Food::Normal);
+        currentFood->setText(QString("Food: Normal"));
         break;
     case 1:
         food->setType(Food::SpeedBoost);
+        currentFood->setText(QString("Food: Speed"));
         break;
     case 2:
         food->setType(Food::SnailEffect);
+        currentFood->setText(QString("Food: Slow"));
         break;
     case 3:
         food->setType(Food::TeleportFruit);
+        currentFood->setText(QString("Food: Portal"));
         break;
     }
 }
