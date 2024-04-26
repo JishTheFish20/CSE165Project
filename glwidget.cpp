@@ -15,10 +15,8 @@ GLWidget::GLWidget(QWidget *parent)
     connect(timer, &QTimer::timeout, this, &GLWidget::updateGame);
     timer->start(getTime());
 
-    // Get the size of the primary screen
     QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
 
-    // Set the window size to match the screen size
     setFixedSize(screenGeometry.size().width()/1.5, screenGeometry.size().height()/1.5);
 
 
@@ -118,26 +116,20 @@ void GLWidget::updateGame()
 
 void GLWidget::initializeSnake()
 {
-    // Get the size of the primary screen
     QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
 
-    // Calculate the number of cells horizontally and vertically based on screen size
     int numCellsX = screenGeometry.width() / 2 / cellSize;
     int numCellsY = screenGeometry.height() / 2 / cellSize;
 
-    // Calculate the starting position of the snake near the middle of the screen
     int startX = numCellsX / 2;
     int startY = numCellsY / 2;
 
-    // Initialize the snake with a default size of 3 cells
     snake.clear();
 
-    // Spawn the snake head and the rest of the body segments with rightwards momentum
     for (int i = 0; i < 3; ++i) {
-        snake.append(QPoint(startX + i, startY)); // Snake body segments with rightwards momentum
+        snake.append(QPoint(startX + i, startY));
     }
 
-    // Set the snake direction to Right
     snakeDirection = Right;
 }
 
@@ -223,21 +215,18 @@ void GLWidget::moveSnake()
 
 void GLWidget::teleportSnake()
 {
-    // Clear the old snake head and update it with the new position
     snake[0] = newHeadPosition;
 
 }
 
 bool GLWidget::checkCollision()
 {
-    if (invulnerable) // Skip collision detection if invulnerable
+    if (invulnerable)
         return false;
 
     QPoint head = snake.first();
-    // Check if the head collides with the borders of the playfield
     if (head.x() < 0 || head.x() >= (width() / cellSize) || head.y() < 0 || head.y() >= (height() / cellSize))
         return true;
-    // Check if the head collides with the snake's body
     for (int i = 0; i < snake.size(); ++i) {
         if (i != 0 && snake[i] == head) // Skip the comparison with the head itself
             return true;
@@ -255,10 +244,10 @@ void GLWidget::createLabels() {
 
 QLabel* GLWidget::createLabel(const QString& text, int x, int y) {
     QLabel* label = new QLabel(text, this);
-    label->setStyleSheet("color: white; font-size: 15pt;"); // Set text color to white and font size to 20 points
-    label->move(x, y); // Adjust the position of the label as needed
+    label->setStyleSheet("color: white; font-size: 15pt;");
+    label->move(x, y);
     label->raise();
-    label->show(); // Ensure the label is visible
+    label->show();
     return label;
 }
 
@@ -268,17 +257,14 @@ void GLWidget::resetGame()
         Score = (snake.size() - 3) * 10;
     }
     bestScore->setText(QString("Best Score: %1").arg(Score));
-    // Reset snake position, direction, and speed
     initializeSnake();
     timer->setInterval(getTime());
 
-    // Reset food position
     food = Food::generateRandomFood(width(), height(), cellSize);
     teleportFood->setTeleportPosition(width(), height(), cellSize);
 
     updateLabels();
 
-    // Reset invulnerability
     invulnerable = true;
 }
 
@@ -289,7 +275,7 @@ void GLWidget::updateLabels(){
     exit->move(newHeadPosition.x() * cellSize, newHeadPosition.y() * cellSize);
 
     if (food->getName() == "TeleportFood") {
-        exit->show(); // Show the label
+        exit->show();
     }else{
         exit->hide();
     }

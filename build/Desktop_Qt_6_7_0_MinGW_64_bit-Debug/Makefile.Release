@@ -255,9 +255,20 @@ release/moc_SlowFood.cpp: ../../SlowFood.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/q23utility.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QRandomGenerator \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/qrandom.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qvarlengtharray.h \
 		release/moc_predefs.h \
 		C:/Qt/6.7.0/mingw_64/bin/moc.exe
-	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/JOSHU/Documents/Projects/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/JOSHU/Documents/Projects/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\SlowFood.h -o release\moc_SlowFood.cpp
+	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/daisy/Documents/github/CSE120/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/daisy/Documents/github/CSE120/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\SlowFood.h -o release\moc_SlowFood.cpp
 
 release/moc_SpeedFood.cpp: ../../SpeedFood.h \
 		../../food.h \
@@ -366,9 +377,20 @@ release/moc_SpeedFood.cpp: ../../SpeedFood.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/q23utility.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QRandomGenerator \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/qrandom.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qvarlengtharray.h \
 		release/moc_predefs.h \
 		C:/Qt/6.7.0/mingw_64/bin/moc.exe
-	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/JOSHU/Documents/Projects/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/JOSHU/Documents/Projects/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\SpeedFood.h -o release\moc_SpeedFood.cpp
+	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/daisy/Documents/github/CSE120/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/daisy/Documents/github/CSE120/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\SpeedFood.h -o release\moc_SpeedFood.cpp
 
 release/moc_TeleportFood.cpp: ../../TeleportFood.h \
 		../../food.h \
@@ -477,9 +499,20 @@ release/moc_TeleportFood.cpp: ../../TeleportFood.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/q23utility.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QRandomGenerator \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/qrandom.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qvarlengtharray.h \
 		release/moc_predefs.h \
 		C:/Qt/6.7.0/mingw_64/bin/moc.exe
-	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/JOSHU/Documents/Projects/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/JOSHU/Documents/Projects/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\TeleportFood.h -o release\moc_TeleportFood.cpp
+	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/daisy/Documents/github/CSE120/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/daisy/Documents/github/CSE120/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\TeleportFood.h -o release\moc_TeleportFood.cpp
 
 release/moc_food.cpp: ../../food.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \
@@ -587,9 +620,20 @@ release/moc_food.cpp: ../../food.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/q23utility.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QRandomGenerator \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/qrandom.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qvarlengtharray.h \
 		release/moc_predefs.h \
 		C:/Qt/6.7.0/mingw_64/bin/moc.exe
-	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/JOSHU/Documents/Projects/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/JOSHU/Documents/Projects/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\food.h -o release\moc_food.cpp
+	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/daisy/Documents/github/CSE120/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/daisy/Documents/github/CSE120/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\food.h -o release\moc_food.cpp
 
 release/moc_glwidget.cpp: ../../glwidget.h \
 		C:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets/QOpenGLWidget \
@@ -818,11 +862,12 @@ release/moc_glwidget.cpp: ../../glwidget.h \
 		C:/Qt/6.7.0/mingw_64/include/QtMultimedia/QAudioOutput \
 		C:/Qt/6.7.0/mingw_64/include/QtMultimedia/qaudiooutput.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QUrl \
+		../../TeleportFood.h \
 		../../food.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QPoint \
 		release/moc_predefs.h \
 		C:/Qt/6.7.0/mingw_64/bin/moc.exe
-	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/JOSHU/Documents/Projects/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/JOSHU/Documents/Projects/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\glwidget.h -o release\moc_glwidget.cpp
+	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/daisy/Documents/github/CSE120/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/daisy/Documents/github/CSE120/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\glwidget.h -o release\moc_glwidget.cpp
 
 release/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
@@ -1022,7 +1067,7 @@ release/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h \
 		release/moc_predefs.h \
 		C:/Qt/6.7.0/mingw_64/bin/moc.exe
-	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/JOSHU/Documents/Projects/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/JOSHU/Documents/Projects/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/daisy/Documents/github/CSE120/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/daisy/Documents/github/CSE120/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o release\moc_mainwindow.cpp
 
 release/moc_startupmenu.cpp: ../../startupmenu.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
@@ -1221,7 +1266,7 @@ release/moc_startupmenu.cpp: ../../startupmenu.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qtextdocument.h \
 		release/moc_predefs.h \
 		C:/Qt/6.7.0/mingw_64/bin/moc.exe
-	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/JOSHU/Documents/Projects/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/JOSHU/Documents/Projects/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\startupmenu.h -o release\moc_startupmenu.cpp
+	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/daisy/Documents/github/CSE120/CSE165Project/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/Users/daisy/Documents/github/CSE120/CSE165Project -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtMultimedia -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtNetwork -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\startupmenu.h -o release\moc_startupmenu.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1351,7 +1396,22 @@ release/food.o: ../../food.cpp ../../Food.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/qpoint.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/q23utility.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QRandomGenerator \
-		C:/Qt/6.7.0/mingw_64/include/QtCore/qrandom.h
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qrandom.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qvarlengtharray.h \
+		../../SlowFood.h \
+		../../food.h \
+		../../SpeedFood.h \
+		../../TeleportFood.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\food.o ..\..\food.cpp
 
 release/main.o: ../../main.cpp ../../mainwindow.h \
@@ -1779,9 +1839,9 @@ release/glwidget.o: ../../glwidget.cpp ../../glwidget.h \
 		C:/Qt/6.7.0/mingw_64/include/QtMultimedia/QAudioOutput \
 		C:/Qt/6.7.0/mingw_64/include/QtMultimedia/qaudiooutput.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QUrl \
+		../../TeleportFood.h \
 		../../food.h \
-		C:/Qt/6.7.0/mingw_64/include/QtCore/QPoint \
-		../../SpeedFood.h
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QPoint
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\glwidget.o ..\..\glwidget.cpp
 
 release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
@@ -2017,6 +2077,7 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtMultimedia/QAudioOutput \
 		C:/Qt/6.7.0/mingw_64/include/QtMultimedia/qaudiooutput.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QUrl \
+		../../TeleportFood.h \
 		../../food.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/QPoint \
 		../../startupmenu.h \
