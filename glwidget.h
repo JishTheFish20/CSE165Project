@@ -12,6 +12,7 @@
 #include <QMediaPlayer>
 #include <QAudioOutput>
 #include <QUrl>
+#include "TeleportFood.h"
 #include "food.h"
 
 class GLWidget : public QOpenGLWidget
@@ -32,15 +33,21 @@ protected:
 private:
     enum Direction { Up, Down, Left, Right };
 
+    int Score;
     QTimer *timer;
     QList<QPoint> snake;
     QLabel *speedLabel; // Declare a pointer to QLabel
     QLabel *scoreCounter;
     QLabel *currentFood;
+    QLabel *bestScore;
+    QLabel *enter;
+    QLabel *exit;
     QMediaPlayer *player;
     QAudioOutput *audioOutput;
     Direction snakeDirection;
     Food *food;
+    TeleportFood *teleportFood;
+    QPoint newHeadPosition;
     int time = 150;
     int cellSize;
     bool snakeMoving;
@@ -58,6 +65,7 @@ private:
     void teleportSnake();
     void resetGame();
     void createLabels();
+    void updateLabels();
     bool checkCollision();
     QLabel* createLabel(const QString& text, int x, int y);
 };

@@ -2,10 +2,13 @@
 #define TELEPORTFOOD_H
 
 #include "food.h"
-
+#include <QRandomGenerator>
+#include <QPoint>
 class TeleportFood : public Food
 {
     Q_OBJECT
+    QPoint newHeadPosition;
+
 public:
     TeleportFood(QObject *parent = nullptr) : Food(parent) {}
 
@@ -15,6 +18,17 @@ public:
     void applyEffect() const override {
         // Emit signal to notify about speed boost effect
         emit speedBoostApplied();
+    }
+
+    QPoint getTeleportPosition(){
+        return newHeadPosition;
+    }
+
+    void setTeleportPosition(int gameWidth, int gameHeight, int cellSize){
+        int x = QRandomGenerator::global()->bounded(gameWidth / cellSize);
+        int y = QRandomGenerator::global()->bounded(gameHeight / cellSize);
+        QPoint holder(x,y);
+        newHeadPosition = holder;
     }
 
     QString getName() override{

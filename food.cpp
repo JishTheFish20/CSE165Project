@@ -13,6 +13,7 @@ Food* Food::generateRandomFood(int gameWidth, int gameHeight, int cellSize)
     Food *food = nullptr;
 
     int randomType = QRandomGenerator::global()->bounded(4); // Assuming you have 4 types of food
+    // randomType = 3;
     switch (randomType) {
     case 0:
         food = new Food();

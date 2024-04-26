@@ -31,7 +31,11 @@ GLWidget::GLWidget(QWidget *parent)
     setFocusPolicy(Qt::StrongFocus); // Makes sure that keyboard presses are checked
 
     food = new Food(this);
+    teleportFood = new TeleportFood(this);
 
+    exit = createLabel("Exit", newHeadPosition.x() * cellSize, newHeadPosition.y() * cellSize);
+    exit->hide();
+    Score = 0;
 
 }
 
@@ -49,6 +53,8 @@ void GLWidget::initializeGL()
     initializeSnake();
     // Generate initial food
     food = Food::generateRandomFood(width(), height(), cellSize);
+    teleportFood->setTeleportPosition(width(), height(), cellSize);
+    updateLabels();
 }
 
 void GLWidget::paintGL()
@@ -156,17 +162,17 @@ void GLWidget::drawSnake()
         painter.setBrush(Qt::blue);
         break;
     case Food::TeleportFruit:
+        //exit->show(); // Show the label
+        painter.setBrush(QColorConstants::Svg::orange);
+        newHeadPosition = teleportFood->getTeleportPosition();
+        painter.drawRect(newHeadPosition.x() * cellSize, newHeadPosition.y() * cellSize, cellSize, cellSize);
         painter.setBrush(Qt::green);
         break;
     }
 
-    // if (food->type() == Food::TeleportFruit) {
-    //     painter.setBrush(Qt::orange);
-    //     QPoint teleportTarget = calculateTeleportTarget();
-    //     painter.drawRect(teleportTarget.x() * cellSize, teleportTarget.y() * cellSize, cellSize, cellSize);
-    // }
 
     painter.drawRect(food->position().x() * cellSize, food->position().y() * cellSize, cellSize, cellSize);
+    updateLabels();
 }
 
 void GLWidget::moveSnake()
@@ -200,7 +206,7 @@ void GLWidget::moveSnake()
             }
             break;
         case Food::SnailEffect:
-            if(timer->interval() > 0){
+            if((timer->interval() - 150) > 0){
                 timer->setInterval(timer->interval()+20);
             }
             break;
@@ -209,21 +215,17 @@ void GLWidget::moveSnake()
             break;
         }
         food = Food::generateRandomFood(width(), height(), cellSize);
-        currentFood->setText(QString("Current: %1").arg(food->getName()));
-        speedLabel->setText(QString("Speed: %1").arg(150 - timer->interval()));
-        scoreCounter->setText(QString("Score: %1").arg((snake.size() - 3) * 10));
+        teleportFood->setTeleportPosition(width(), height(), cellSize);
+        updateLabels();
     }
 }
 
 
 void GLWidget::teleportSnake()
 {
-    int x = QRandomGenerator::global()->bounded(width() / cellSize);
-    int y = QRandomGenerator::global()->bounded(height() / cellSize);
-    QPoint newHeadPosition(x, y);
-
     // Clear the old snake head and update it with the new position
     snake[0] = newHeadPosition;
+
 }
 
 bool GLWidget::checkCollision()
@@ -248,6 +250,7 @@ void GLWidget::createLabels() {
     speedLabel = createLabel("Speed: 0           ", 0, 0);
     scoreCounter = createLabel("Score: 0          ", 200, 0);
     currentFood = createLabel("Fruit: N/A                              ", 400, 0);
+    bestScore = createLabel("Best Score:          ", 800,0);
 }
 
 QLabel* GLWidget::createLabel(const QString& text, int x, int y) {
@@ -261,18 +264,33 @@ QLabel* GLWidget::createLabel(const QString& text, int x, int y) {
 
 void GLWidget::resetGame()
 {
+    if(Score < (snake.size() - 3) * 10){
+        Score = (snake.size() - 3) * 10;
+    }
+    bestScore->setText(QString("Best Score: %1").arg(Score));
     // Reset snake position, direction, and speed
     initializeSnake();
     timer->setInterval(getTime());
 
     // Reset food position
     food = Food::generateRandomFood(width(), height(), cellSize);
+    teleportFood->setTeleportPosition(width(), height(), cellSize);
 
-    // Update labels
-    currentFood->setText(QString("Current: %1").arg(food->getName()));
-    speedLabel->setText(QString("Speed: %1").arg(150 - timer->interval()));
-    scoreCounter->setText(QString("Score: %1").arg((snake.size() - 3) * 10));
+    updateLabels();
 
     // Reset invulnerability
     invulnerable = true;
+}
+
+void GLWidget::updateLabels(){
+    currentFood->setText(QString("Current: %1").arg(food->getName()));
+    speedLabel->setText(QString("Speed: %1").arg(150 - timer->interval()));
+    scoreCounter->setText(QString("Score: %1").arg((snake.size() - 3) * 10));
+    exit->move(newHeadPosition.x() * cellSize, newHeadPosition.y() * cellSize);
+
+    if (food->getName() == "TeleportFood") {
+        exit->show(); // Show the label
+    }else{
+        exit->hide();
+    }
 }

@@ -27,7 +27,7 @@ public:
 
     virtual QPoint position() const { return m_position; }
     virtual void setPosition(const QPoint &position) { m_position = position; }
-    virtual QString getName(){ qDebug() << "Speed Food getName() called"; return "NormalFood";}
+    virtual QString getName(){ return "NormalFood";}
 
     virtual void applyEffect() const{}
 
