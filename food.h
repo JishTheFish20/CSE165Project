@@ -1,36 +1,38 @@
+// Food.h
 #ifndef FOOD_H
 #define FOOD_H
 
 #include <QObject>
 #include <QPoint>
-#include <QPainter>
-#include "Snake.h"
+#include <QRandomGenerator>
+#include <qdebug.h>
 
 class Food : public QObject
 {
     Q_OBJECT
 public:
-
-    QString name;
-
     enum Type {
         Normal,
-        SpeedBoost, // New type for speed boost food
+        SpeedBoost,
         SnailEffect,
-        TeleportFruit,
+        TeleportFruit
     };
 
     explicit Food(QObject *parent = nullptr);
 
-    virtual Type type() const { return m_type; } // Made virtual for polymorphism
-    virtual void setType(Type type) { m_type = type; } // Made virtual for polymorphism
+    static Food* generateRandomFood(int gameWidth, int gameHeight, int cellSize);
 
-    virtual QPoint position() const { return m_position; } // Made virtual for polymorphism
-    virtual void setPosition(const QPoint &position) { m_position = position; } // Made virtual for polymorphism
+    virtual Type type() const { return Normal; }
+    virtual void setType(Type type) { m_type = type; }
+
+    virtual QPoint position() const { return m_position; }
+    virtual void setPosition(const QPoint &position) { m_position = position; }
+    virtual QString getName(){ qDebug() << "Speed Food getName() called"; return "NormalFood";}
+
+    virtual void applyEffect() const{}
 
 
-    // Virtual destructor for proper cleanup in derived classes
-    virtual ~Food() {}
+    bool checkCollision(const QPoint &snakeHead, int gameWidth, int gameHeight, int cellSize) const;
 
 private:
     Type m_type;

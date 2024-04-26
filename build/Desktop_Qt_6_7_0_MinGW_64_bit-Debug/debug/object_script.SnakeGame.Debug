@@ -5,6 +5,9 @@ debug/mainwindow.o
 debug/snake.o
 debug/startupmenu.o
 debug/qrc_Assests.o
+debug/moc_SlowFood.o
+debug/moc_SpeedFood.o
+debug/moc_TeleportFood.o
 debug/moc_food.o
 debug/moc_glwidget.o
 debug/moc_mainwindow.o

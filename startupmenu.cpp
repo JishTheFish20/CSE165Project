@@ -1,4 +1,5 @@
 #include "startupmenu.h"
+#include <QUrl>
 
 StartupMenu::StartupMenu(QWidget *parent) : QWidget(parent)
 {
@@ -6,7 +7,7 @@ StartupMenu::StartupMenu(QWidget *parent) : QWidget(parent)
     connect(startButton, &QPushButton::clicked, this, &StartupMenu::on_startButton_clicked);
 
     imageLabel = new QLabel(this);
-    QPixmap image(":/images/Assests/SnakeStartScreen.png");
+    QPixmap image("qrc:/images/Assests/SnakeStartScreen.png");
     imageLabel->setPixmap(image);
     imageLabel->setAlignment(Qt::AlignCenter); // Center the image within the label
 

@@ -1,4 +1,4 @@
-QT += core gui opengl widgets openglwidgets
+QT += core gui opengl widgets openglwidgets multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,7 +23,9 @@ SOURCES += \
     startupmenu.cpp
 
 HEADERS += \
+    SlowFood.h \
     SpeedFood.h \
+    TeleportFood.h \
     food.h \
     glwidget.h \
     mainwindow.h \

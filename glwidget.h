@@ -9,6 +9,9 @@
 #include <QGuiApplication>
 #include <QLabel>
 #include <QDateTime> // Include QDateTime for time calculations
+#include <QMediaPlayer>
+#include <QAudioOutput>
+#include <QUrl>
 #include "food.h"
 
 class GLWidget : public QOpenGLWidget
@@ -34,6 +37,8 @@ private:
     QLabel *speedLabel; // Declare a pointer to QLabel
     QLabel *scoreCounter;
     QLabel *currentFood;
+    QMediaPlayer *player;
+    QAudioOutput *audioOutput;
     Direction snakeDirection;
     Food *food;
     int time = 150;
@@ -51,7 +56,10 @@ private:
     void moveSnake();
     void generateFood();
     void teleportSnake();
+    void resetGame();
+    void createLabels();
     bool checkCollision();
+    QLabel* createLabel(const QString& text, int x, int y);
 };
 
 #endif // GLWIDGET_H

@@ -1,4 +1,5 @@
 #include "glwidget.h"
+#include "food.h"
 #include <QPainter>
 #include <QGuiApplication>
 
@@ -25,27 +26,12 @@ GLWidget::GLWidget(QWidget *parent)
     // Optionally, you can move the window to the top-left corner of the screen
     //move(screenGeometry.topLeft());
 
-    speedLabel = new QLabel("Speed: N/A", this);
-    speedLabel->setStyleSheet("color: white; font-size: 15pt;"); // Set text color to white and font size to 20 points
-    speedLabel->move(200, 0); // Adjust the position of the label as needed
-    speedLabel->raise();
-    speedLabel->show(); // Ensure the label is visible
-
-    scoreCounter = new QLabel("Score: N/A", this);
-    scoreCounter->setStyleSheet("color: white; font-size: 15pt;"); // Set text color to white and font size to 20 points
-    scoreCounter->move(50, 0); // Adjust the position of the label as needed
-    scoreCounter->raise();
-    scoreCounter->show(); // Ensure the label is visible
-
-    currentFood = new QLabel("Fruit: N/A", this);
-    currentFood->setStyleSheet("color: white; font-size: 15pt;"); // Set text color to white and font size to 20 points
-    currentFood->move(300, 0); // Adjust the position of the label as needed
-    currentFood->raise();
-    currentFood->show(); // Ensure the label is visible
+    createLabels();
 
     setFocusPolicy(Qt::StrongFocus); // Makes sure that keyboard presses are checked
 
     food = new Food(this);
+
 
 }
 
@@ -61,7 +47,8 @@ void GLWidget::initializeGL()
     glEnable(GL_DEPTH_TEST);
 
     initializeSnake();
-    generateFood();
+    // Generate initial food
+    food = Food::generateRandomFood(width(), height(), cellSize);
 }
 
 void GLWidget::paintGL()
@@ -115,14 +102,10 @@ void GLWidget::keyPressEvent(QKeyEvent *event)
 
 void GLWidget::updateGame()
 {
-    speedLabel->setText(QString("Speed: %1").arg(150 - timer->interval()));
-    scoreCounter->setText(QString("Score: %1").arg((snake.size() - 3) * 10));
+    //qDebug() << "Generated food name:" << food->getName(); // Debug output to check the name of the new food
     moveSnake();
     if (checkCollision() && !invulnerable) { // Check collision only if not invulnerable
-        initializeSnake();
-        generateFood();
-        timer->setInterval(getTime());
-        invulnerable = true; // Snake becomes invulnerable after respawn
+        resetGame();
     }
     update();
 }
@@ -177,6 +160,12 @@ void GLWidget::drawSnake()
         break;
     }
 
+    // if (food->type() == Food::TeleportFruit) {
+    //     painter.setBrush(Qt::orange);
+    //     QPoint teleportTarget = calculateTeleportTarget();
+    //     painter.drawRect(teleportTarget.x() * cellSize, teleportTarget.y() * cellSize, cellSize, cellSize);
+    // }
+
     painter.drawRect(food->position().x() * cellSize, food->position().y() * cellSize, cellSize, cellSize);
 }
 
@@ -206,47 +195,26 @@ void GLWidget::moveSnake()
 
             break;
         case Food::SpeedBoost:
-            if(timer->interval() > 50){
+            if(timer->interval() > 20){
                 timer->setInterval(timer->interval()-20);
             }
             break;
         case Food::SnailEffect:
-            timer->setInterval(timer->interval()+20);
+            if(timer->interval() > 0){
+                timer->setInterval(timer->interval()+20);
+            }
             break;
         case Food::TeleportFruit:
             teleportSnake();
             break;
         }
-        generateFood();
+        food = Food::generateRandomFood(width(), height(), cellSize);
+        currentFood->setText(QString("Current: %1").arg(food->getName()));
+        speedLabel->setText(QString("Speed: %1").arg(150 - timer->interval()));
+        scoreCounter->setText(QString("Score: %1").arg((snake.size() - 3) * 10));
     }
 }
 
-void GLWidget::generateFood()
-{
-    int x = QRandomGenerator::global()->bounded(width() / cellSize);
-    int y = QRandomGenerator::global()->bounded(height() / cellSize);
-    food->setPosition(QPoint(x, y));
-
-    int randomType = QRandomGenerator::global()->bounded(4); // Assuming you have 3 types of food
-    switch (randomType) {
-    case 0:
-        food->setType(Food::Normal);
-        currentFood->setText(QString("Food: Normal"));
-        break;
-    case 1:
-        food->setType(Food::SpeedBoost);
-        currentFood->setText(QString("Food: Speed"));
-        break;
-    case 2:
-        food->setType(Food::SnailEffect);
-        currentFood->setText(QString("Food: Slow"));
-        break;
-    case 3:
-        food->setType(Food::TeleportFruit);
-        currentFood->setText(QString("Food: Portal"));
-        break;
-    }
-}
 
 void GLWidget::teleportSnake()
 {
@@ -273,4 +241,38 @@ bool GLWidget::checkCollision()
             return true;
     }
     return false;
+}
+
+void GLWidget::createLabels() {
+    // Create labels with adjusted positions
+    speedLabel = createLabel("Speed: 0           ", 0, 0);
+    scoreCounter = createLabel("Score: 0          ", 200, 0);
+    currentFood = createLabel("Fruit: N/A                              ", 400, 0);
+}
+
+QLabel* GLWidget::createLabel(const QString& text, int x, int y) {
+    QLabel* label = new QLabel(text, this);
+    label->setStyleSheet("color: white; font-size: 15pt;"); // Set text color to white and font size to 20 points
+    label->move(x, y); // Adjust the position of the label as needed
+    label->raise();
+    label->show(); // Ensure the label is visible
+    return label;
+}
+
+void GLWidget::resetGame()
+{
+    // Reset snake position, direction, and speed
+    initializeSnake();
+    timer->setInterval(getTime());
+
+    // Reset food position
+    food = Food::generateRandomFood(width(), height(), cellSize);
+
+    // Update labels
+    currentFood->setText(QString("Current: %1").arg(food->getName()));
+    speedLabel->setText(QString("Speed: %1").arg(150 - timer->interval()));
+    scoreCounter->setText(QString("Score: %1").arg((snake.size() - 3) * 10));
+
+    // Reset invulnerability
+    invulnerable = true;
 }

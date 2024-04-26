@@ -5,6 +5,9 @@ release/mainwindow.o
 release/snake.o
 release/startupmenu.o
 release/qrc_Assests.o
+release/moc_SlowFood.o
+release/moc_SpeedFood.o
+release/moc_TeleportFood.o
 release/moc_food.o
 release/moc_glwidget.o
 release/moc_mainwindow.o
