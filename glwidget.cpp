@@ -198,7 +198,7 @@ void GLWidget::moveSnake()
             }
             break;
         case Food::SnailEffect:
-            if((timer->interval() - 150) > 0){
+            if((150 - timer->interval()) > 0){
                 timer->setInterval(timer->interval()+20);
             }
             break;
